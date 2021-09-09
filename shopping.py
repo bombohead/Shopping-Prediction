@@ -95,12 +95,9 @@ def load_data(filename):
             #Adds special day
             temp.append(float(row[9]))
 
-            #Converts month name to integer
-            try:
-                monthObject = datetime.datetime.strptime(row[10][0:3], "%b")
-                temp.append(monthObject.month - 1)
-            except:
-                print(row[10])
+            #Adds month
+            monthObject = datetime.datetime.strptime(row[10][0:3], "%b")
+            temp.append(monthObject.month - 1)
 
             #Adds OS
             temp.append(int(row[11]))
